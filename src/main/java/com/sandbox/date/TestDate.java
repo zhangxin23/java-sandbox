@@ -1,8 +1,10 @@
 package com.sandbox.date;
 
+import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Locale;
 
 /**
  * Author: zhangxin
@@ -23,6 +25,14 @@ public class TestDate {
 
 
     public static void main(String[] args) {
-        System.out.println(parse("24/Mar/2014:06:33:04 +0100"));
+//        System.out.println(parse("24/Mar/2014:06:33:04 +0100"));
+
+        try {
+            SimpleDateFormat myFmt1 = new SimpleDateFormat("dd/MMM/yyyy:HH:mm:ssZ", Locale.ENGLISH);
+            System.out.println(myFmt1.parse("24/Mar/2014:06:33:04+0800"));
+//            System.out.println(myFmt1.format(new Date()));
+        } catch (Exception e) {
+            throw new IllegalArgumentException("invalid format.");
+        }
     }
 }
