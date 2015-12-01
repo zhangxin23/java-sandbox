@@ -1,5 +1,7 @@
 #!/bin/zsh
 
+source ~/.zshrc
+
 if [ -z "$1" ]
 then
     echo "push.sh commit-msg";
