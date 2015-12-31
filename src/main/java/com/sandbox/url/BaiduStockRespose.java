@@ -1,5 +1,7 @@
 package com.sandbox.url;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import java.util.List;
 
 /**
