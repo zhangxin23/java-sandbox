@@ -18,7 +18,7 @@ public class MapReduceOpt {
         final Optional<String> aLongName = friends.stream().reduce((name1, name2)->name1.length() >= name2.length() ? name1 : name2);
         aLongName.ifPresent(name -> System.out.println(String.format("Longest name: %s", name)));
 
-        final String aDefaultLongName = friends.stream().reduce("AAABBB", (name1, name2)->name1.length() >= name2.length() ? name1 : name2);
+        final String aDefaultLongName = friends.stream().reduce("A", (name1, name2)->name1.length() >= name2.length() ? name1 : name2);
         System.out.println("A default Long name is " + aDefaultLongName);
 
         /**
