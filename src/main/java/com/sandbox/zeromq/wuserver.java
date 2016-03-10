@@ -14,7 +14,7 @@ public class wuserver {
         ZMQ.Context context = ZMQ.context(1);
         ZMQ.Socket publisher = context.socket(ZMQ.PUB);
         publisher.bind("tcp://*:5556");
-        publisher.bind("ipc://weather");
+//        publisher.bind("ipc://weather");
 
         Random srandom = new Random(System.currentTimeMillis());
         while(!Thread.currentThread().isInterrupted()) {
