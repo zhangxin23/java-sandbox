@@ -14,8 +14,15 @@ public class TestString {
         return String.format("Hi %s, my name is %s", name, yourName);
     }
 
-    public static void main(String ... args) {
-        System.out.println(new TestString("first").greet("1"));
+    public static void setString(String out) {
+        out = "setString func";
     }
 
+    public static void main(String ... args) {
+        System.out.println(new TestString("first").greet("1"));
+
+        String out = "123";
+        setString(out);
+        System.out.println(out);
+    }
 }
