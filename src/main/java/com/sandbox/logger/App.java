@@ -18,5 +18,12 @@ public class App
         logger.info("----------begin------------");
         System.out.println( "Hello World!" );
         logger.info("-----------end-------------");
+
+        LoggerObject loggerObject = new LoggerObject("A", 1, 1.0);
+        logger.error("LoggerObject = {}", loggerObject);
+
+        Long value = null;
+//        System.out.println(value * 10);
+        System.out.println(value - 10);
     }
 }
