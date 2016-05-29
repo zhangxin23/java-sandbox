@@ -24,5 +24,9 @@ public class TestString {
         String out = "123";
         setString(out);
         System.out.println(out);
+
+        String txt = "确认收货后,可获得1张{}元商家代金券";
+        txt = txt.replace("{}", 0.9 + "");
+        System.out.println(txt);
     }
 }

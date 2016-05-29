@@ -61,5 +61,18 @@ public class ArrayListTest {
         for(int i = 0; i < linkedList.size(); i++) {
             System.out.println(linkedList.get(i));
         }
+
+
+        System.out.println("====================================");
+
+        List<Integer> testInsertList = new ArrayList<>();
+        testInsertList.add(1);
+        testInsertList.add(2);
+        testInsertList.add(3);
+        testInsertList.add(3, 11);
+
+        for(Integer item: testInsertList) {
+            System.out.println(item);
+        }
     }
 }
