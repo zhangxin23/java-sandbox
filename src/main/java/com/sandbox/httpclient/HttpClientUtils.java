@@ -154,7 +154,7 @@ public class HttpClientUtils {
                             logger.debug("url :{} , response string:{}", url, result);
                             return result;
                         } else {
-                            logger.error("status:{},url :{} ,response :{} ", status, url, result);
+                            logger.error("status:{}, url:{}, response :{} ", status, url, result);
                             return "ERROR-" + status;
                         }
                     }
