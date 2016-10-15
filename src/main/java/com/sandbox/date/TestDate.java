@@ -34,5 +34,9 @@ public class TestDate {
         } catch (Exception e) {
             throw new IllegalArgumentException("invalid format.");
         }
+
+        Date date = new Date(0);
+        String viewTime = new SimpleDateFormat("YYYY-M-d HH:mm").format(date);
+        System.out.println("view_time = " + viewTime);
     }
 }
