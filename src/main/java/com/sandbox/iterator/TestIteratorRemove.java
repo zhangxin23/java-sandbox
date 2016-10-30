@@ -40,14 +40,14 @@ public class TestIteratorRemove {
         Iterator<Integer> iterator = testList.iterator();
         while(iterator.hasNext()) {
             Integer value = iterator.next();
-            if(value == 2)
+            if(value == 4)
                 iterator.remove();
         }
 
         iterator = testList.iterator();
         while(iterator.hasNext()) {
             Integer value = iterator.next();
-            if(value == 4)
+            if(value == 2)
                 iterator.remove();
         }
 
