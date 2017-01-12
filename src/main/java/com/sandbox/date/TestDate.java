@@ -3,6 +3,7 @@ package com.sandbox.date;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
@@ -38,5 +39,39 @@ public class TestDate {
         Date date = new Date(0);
         String viewTime = new SimpleDateFormat("YYYY-M-d HH:mm").format(date);
         System.out.println("view_time = " + viewTime);
+
+
+        Date date1 = new Date(0);
+        String viewtime = new SimpleDateFormat("YYYY.MM.dd").format(date1);
+        System.out.println("view_time_1=" + viewtime);
+
+
+
+
+        System.out.println("########################################");
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTimeInMillis(System.currentTimeMillis());
+        System.out.println(calendar.getTime());
+        System.out.println("########################################");
+        calendar.set(calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH) + 1, 0, 0, 0);
+        System.out.println(calendar.getTime());
+
+
+        /*************************************/
+        System.out.println("########################################");
+        int now = (int)(System.currentTimeMillis() / 1000);
+        int now7 = getNaturalDays(now, 7);
+        Calendar calendarNow = Calendar.getInstance();
+        calendarNow.setTimeInMillis(now * 1000L);
+        System.out.println(calendarNow.getTime());
+        calendarNow.setTimeInMillis(now7 * 1000L);
+        System.out.println(calendarNow.getTime());
+    }
+
+    public static int getNaturalDays(int sec, int days) {
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTimeInMillis(sec * 1000L);
+        calendar.set(calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH), 23, 59, 59);
+        return (int)(calendar.getTimeInMillis() / 1000) + (days - 1) * 24 * 3600;
     }
 }
