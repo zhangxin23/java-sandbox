@@ -2,10 +2,7 @@ package com.sandbox.json;
 
 import com.alibaba.fastjson.JSON;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * User: zhangxin
@@ -28,10 +25,19 @@ public class JsonMap {
     }
 
     public static void main(String ... args) {
-        Map<String, String> map = new HashMap<>();
-        map.put("name", "first");
-        map.put("value", "1");
+        Map<Integer, List<String>> map = new HashMap<>();
+        map.put(1, Arrays.asList("123", "456"));
+        map.put(2, Arrays.asList("123", "456"));
         System.out.println("json string = " + JSON.toJSONString(map));
+
+        Map<Integer, List<String>> convertedMap = (Map<Integer, List<String>>)JSON.parse(JSON.toJSONString(map));
+        for(Map.Entry<Integer, List<String>> entry: convertedMap.entrySet()) {
+            System.out.println(entry.getKey() + ": " + entry.getValue().toString());
+//            System.out.print(entry.getKey());
+//            for(String item: entry.getValue()) {
+//
+//            }
+        }
 
         System.out.println("---------------------------");
         Map<String, Object> mapList = new HashMap<>();
