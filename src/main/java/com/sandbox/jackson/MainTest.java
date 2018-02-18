@@ -1,6 +1,9 @@
 package com.sandbox.jackson;
 
+import com.alibaba.fastjson.JSON;
 import org.codehaus.jackson.map.ObjectMapper;
+
+import java.util.List;
 
 /**
  * Created by zhangxin on 15-4-3.
@@ -41,11 +44,56 @@ public class MainTest {
 //            e.printStackTrace();
 //        }
 
+//        try {
+//            ObjectMapper objectMapper = new ObjectMapper();
+//            Persion persion = new Persion("aa", null, null);
+//            System.out.println(objectMapper.writeValueAsString(persion));
+//        } catch(Exception e) {
+//            e.printStackTrace();
+//        }
+
         try {
-            ObjectMapper objectMapper = new ObjectMapper();
-            Persion persion = new Persion("aa", null, null);
-            System.out.println(objectMapper.writeValueAsString(persion));
-        } catch(Exception e) {
+//            ObjectMapper objectMapper = new ObjectMapper();
+//            String jsonStr = "{\"name\":\"BBB\",\"sex\":\"B\",\"age\":2,\"xx\":true}";
+//            String jsonStr = "{\"name\":\"BBB\",\"sex\":\"B\"}";
+//            Persion persion = objectMapper.readValue(jsonStr, Persion.class);
+//            System.out.println("Person.name=" + persion.getName());
+//            System.out.println("Person.sex=" + persion.getSex());
+//            System.out.println("Person.Age=" + persion.getAge());
+
+
+//            String jsonStr = "\"[{\"name\":\"BBB\",\"sex\":\"B\",\"age\":2,\"xx\":true}]\"";
+//
+//            jsonStr = jsonStr.substring(1, jsonStr.length() - 1);
+//
+//            List<Persion> persionList = JSON.parseArray(jsonStr, Persion.class);
+//            for(Persion item: persionList) {
+//                System.out.println(item);
+//            }
+
+            String aStr = new StringBuilder("A").append("/").append("B").append("/").append("C").toString().intern();
+            String bStr = new StringBuilder("A").append("/").append("B").append("/").append("C").toString().intern();
+
+            System.out.println(aStr);
+            System.out.println(bStr);
+
+            System.out.println("aStr == bStr: " + (aStr == bStr));
+
+            System.out.println(System.identityHashCode(aStr));
+            System.out.println(System.identityHashCode(bStr));
+
+
+            String aaStr = new String("1").intern();
+            String bbStr = new String("1").intern();
+
+            System.out.println(System.identityHashCode(aaStr));
+            System.out.println(System.identityHashCode(bbStr));
+
+            String tableName = "ordersa#test_table";
+            tableName = tableName.split("#")[1];
+            System.out.print("tableName: " + tableName);
+
+        } catch (Exception e) {
             e.printStackTrace();
         }
 

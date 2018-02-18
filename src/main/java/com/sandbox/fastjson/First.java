@@ -32,5 +32,20 @@ public class First {
 
         List<AdResult> adResultList1 = new ArrayList<>();
         System.out.println(JSON.toJSONString(adResultList1));
+
+        System.out.println("====================================================");
+
+        String adAttrEmpty = "{}";
+        AdResult.AdAttr adAttrObjEmpty = JSON.parseObject(adAttrEmpty, AdResult.AdAttr.class);
+        if(adAttrObjEmpty == null) {
+            System.out.println("adAttrObjEmpty == null");
+        } else {
+            System.out.println(adAttrObjEmpty.getAdCtrlAreaId());
+            System.out.println(adAttrObjEmpty.getAdId());
+            System.out.println(adAttrObjEmpty.getAdPos());
+            System.out.println(adAttrObjEmpty.getAdSlotId());
+        }
+
+        System.out.println("====================================================");
     }
 }
