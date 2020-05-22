@@ -39,8 +39,16 @@ public class First {
             }
         });
 
+        Thread third_thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                System.out.println(msg.get());
+            }
+        });
+
         first_thread.start();
         second_thread.start();
+        third_thread.start();
 
         Thread.currentThread().join();
     }
