@@ -1,7 +1,6 @@
 package com.sandbox.fastjson;
 
 import com.alibaba.fastjson.JSON;
-import com.apple.eawt.AppEvent;
 
 import java.util.ArrayList;
 import java.util.List;

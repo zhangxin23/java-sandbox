@@ -7,8 +7,9 @@ import javax.crypto.Mac;
 import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
 
-import sun.misc.BASE64Decoder;
-import sun.misc.BASE64Encoder;
+import java.util.Base64;
+import java.util.Base64.Decoder;
+import java.util.Base64.Encoder;
 
 
 /**
@@ -41,7 +42,8 @@ public abstract class Coder {
      * @throws Exception
      */
     public static byte[] decryptBASE64(String key) throws Exception {
-        return (new BASE64Decoder()).decodeBuffer(key);
+        Decoder decoder = Base64.getDecoder();
+        return decoder.decode(key);
     }
 
     /**
@@ -52,7 +54,8 @@ public abstract class Coder {
      * @throws Exception
      */
     public static String encryptBASE64(byte[] key) throws Exception {
-        return (new BASE64Encoder()).encodeBuffer(key);
+        Encoder encoder = Base64.getEncoder();
+        return encoder.encodeToString(key);
     }
 
     /**

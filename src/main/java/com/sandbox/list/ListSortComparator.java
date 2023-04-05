@@ -1,8 +1,5 @@
 package com.sandbox.list;
 
-import com.sun.tools.corba.se.idl.InterfaceGen;
-import scala.Int;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
